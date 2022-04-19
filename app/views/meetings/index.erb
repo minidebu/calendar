@@ -1,0 +1,27 @@
+<p id="notice"><%= notice%> </p>
+
+<h1>Meetings</h1>
+
+<table class = "table table-sm table-striped">
+  <thead>
+    <tr>
+      <th scope = "co1">Name</th>
+      <th scope = "co1">Start time</th>
+    </tr>
+  </thead>
+  </tbody>
+    <% @meetings.each do |meeting|%>
+      <tr>
+        <td><%= meeting.name%></td>
+         <td><%= meeting.start_time%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<%= month_calendar events:@meetings do |date,meetings|%>
+  <%= date %>
+  <% meetings.each do |meeting|%>
+    <%= meeting.name%>
+  <%end%>
+<% end %>

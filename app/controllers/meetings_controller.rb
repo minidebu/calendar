@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
-  def inedx
-
+  def index
+    @meetings = Meeting.all
   end
 
 end
